@@ -6,7 +6,7 @@
 /*   By: mpinson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 15:54:38 by mpinson           #+#    #+#             */
-/*   Updated: 2016/11/12 18:34:11 by mpinson          ###   ########.fr       */
+/*   Updated: 2017/02/06 14:06:20 by mpinson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef	struct		s_fd
     struct s_fd		*srt;
 }					t_fd;
 
+char			*get_file(int fd);
 int				get_next_line(int const fd, char **line);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));

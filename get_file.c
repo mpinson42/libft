@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpinson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:34:35 by mpinson           #+#    #+#             */
-/*   Updated: 2016/11/09 18:02:32 by mpinson          ###   ########.fr       */
+/*   Created: 2017/02/06 14:05:25 by mpinson           #+#    #+#             */
+/*   Updated: 2017/02/06 14:06:59 by mpinson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char		*get_file(int fd)
 {
-	char	*str;
-	size_t	i;
+	char	*file;
+	char	*tmp;
+	char	*swp;
 
-	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * size + 1)))
+	if (fd == -1)
 		return (NULL);
-	while (i <= size)
+	if (!(file = (char *)ft_memalloc(sizeof(char))))
+		return (file);
+	if (!(tmp = (char *)ft_memalloc(sizeof(char) * 101)))
 	{
-		str[i] = '\0';
-		i++;
+		free(file);
+		return (tmp);
 	}
-	return (str);
+	while (read(fd, tmp, 100))
+	{
+		swp = ft_strjoin(file, tmp);
+		free(file);
+		file = ft_strdup(swp);
+		free(swp);
+		ft_bzero(tmp, 101);
+	}
+	free(tmp);
+	return (file);
 }

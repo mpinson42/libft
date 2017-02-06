@@ -6,7 +6,7 @@
 #    By: mpinson <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 15:11:15 by mpinson           #+#    #+#              #
-#    Updated: 2016/11/10 21:18:05 by mpinson          ###   ########.fr        #
+#    Updated: 2017/02/06 14:05:15 by mpinson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ./ft_atoi.c ./ft_bzero.c ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c \
 	  ./ft_strmapi.c ./ft_strtrim.c ./ft_strrev.c ./ft_strsplit.c ./ft_lstnew.c \
 	  ./ft_lstdelone.c ./ft_lstdel.c ./ft_lstadd.c ./ft_lstiter.c ./ft_lstmap.c \
 	  ./ft_absolut.c ./ft_strjoin_free.c ./ft_recursive_factorial.c \
-	  ./ft_iterative_power.c
+	  ./ft_iterative_power.c ./get_file.c
 
 SRC2 = ./ft_atoi.o ./ft_bzero.o ./ft_isalnum.o ./ft_isalpha.o ./ft_isascii.o \
 	   ./ft_isdigit.o ./ft_isprint.o ./ft_memccpy.o ./ft_memchr.o ./ft_memcmp.o \
@@ -40,7 +40,7 @@ SRC2 = ./ft_atoi.o ./ft_bzero.o ./ft_isalnum.o ./ft_isalpha.o ./ft_isascii.o \
 	   ./ft_strmapi.o ./ft_strtrim.o ./ft_strrev.o ./ft_strsplit.o ./ft_lstnew.o \
 	   ./ft_lstdelone.o ./ft_lstdel.o ./ft_lstadd.o ./ft_lstiter.o ./ft_lstmap.o \
 	   ./ft_absolut.o ./ft_strjoin_free.o ./ft_recursive_factorial.o \
-	   ./ft_iterative_power.o
+	   ./ft_iterative_power.o get_file.o
 
 
 all: $(NAME)
